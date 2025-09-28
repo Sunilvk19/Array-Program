@@ -2,25 +2,26 @@ package practice.dekshitsir;
 
 public class NumberBetweenRange {
     public static int countDigit(int num){
-        int count = 0;
+        int count1 = 0;
         while(num != 0){
             num = num / 10;
-            count++;
+            count1++;
         }
-        return count;
+        return count1;
     }
-    public static int rangeOfNumber(int L,int R, int K){
-        int count = 0;
-        for(int i=L; i<=R; i++){
-            count += countDigit(i);
-            if(count >= K)
-                return i;
-        }
-        return -1;
+    public static long rangeOfNumber(long L,long R, long K){
+        long count = 0;
+       for(long i=L; i<=R; i++){
+           count = count + countDigit((int) i);
+           if(count >= K)
+               return i;
+       }
+        return 0;
     }
 
     public static void main(String[] args) {
-        int num = rangeOfNumber(1,20,15);
+
+        long num = rangeOfNumber(11,25,10);
         System.out.println(num);
     }
 }
